@@ -1,18 +1,21 @@
+import { useContext, useState } from "react"
+import { MainContext } from "../contexts/MainProvaider"
 
-function Homepages({name,setname,getProduct}) {
-    console.log(name)
-    // async function homeProduct() {
-    //     const res = await fetch('https://fakestoreapi.com/products');
-    //     const data = await res.json()
-    //     await getProduct()
-    //     return data
-    // }
-
+function Homepages() {
+const { name, setname, getProduct }= useContext(MainContext)
+ 
   return (
  <>
- {name&&name.map((x)=>(
-    <h2 key={x.id}>{x.title}</h2>
- ))}
+<div style={{display:"flex", flexWrap:"wrap", gap:"20px", marginTop:"50px", marginLeft:"100px"}}>
+{name.map((x)=>(
+  <div style={{width:"200px", border:"1px solid black"}}>
+    <img src={x.image} alt="" style={{width:"100%", height:"200px"}} />
+    <h4 >{x.title}</h4>
+    <h5 >{x.category}</h5>
+    <h6 >{x.price}</h6>
+  </div>
+))}
+</div>
  </>
   )
 }

@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Homepages from "../pages/Homepages";
-import Detail from "../pages/Detail";
+import Employees from "../pages/Employees";
+import Favorite from "../pages/Favorite";
+import AdminPanel from "../pages/AdminPanel";
 
 
 export const Router=createBrowserRouter([
@@ -16,15 +18,15 @@ export const Router=createBrowserRouter([
             },
             {
                 path:"Employes",
-                element:<Detail/>,
+                element:<Employees/>,
             },
             {
                 path:"AdminPanel",
-                element:<Detail/>,
+                element:<AdminPanel/>,
             },
             {
                 path:"Favorite",
-                element:<Detail/>,
+                element:<Favorite/>,
             },
        
     
