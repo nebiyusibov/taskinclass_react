@@ -11,12 +11,11 @@ function MainProvaider({children}) {
     const data = await res.json();
     setname(data);
   }
-  async function deleteProduct(id) {
-    const res = await fetch("https://fakestoreapi.com/products/"+id ,{method:"delete"});
+  async function deleteProduct(item) {
+    const res = await fetch("https://fakestoreapi.com/products/"+item.id ,{method:"delete"});
     const data = await res.json();
-    setname(data);
+    await getProduct()
   }
-
   useEffect(() => {
     getProduct();
   }, []);
